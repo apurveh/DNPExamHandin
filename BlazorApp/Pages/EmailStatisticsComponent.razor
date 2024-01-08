@@ -1,0 +1,31 @@
+@using BlazorApp.Data
+@using BlazorApp.Data.Service
+@inject IEmailService service;
+
+<h3>Email Statistics</h3>
+
+<p>Number of emails sent by me: @EmailsSentByMe</p>
+<p>Number of emails received by others: @EmailsReceivedByOthers</p>
+
+@code {
+    private int EmailsSentByMe { get; set; }
+    private int EmailsReceivedByOthers { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var emails = await service.GetEmailsAsync();
+
+        foreach (var email in emails)
+        {
+            if (email.Sender == "Apurva")
+            {
+                EmailsSentByMe++;
+            }
+
+            if (email.Receiver != "Apurva")
+            {
+                EmailsReceivedByOthers++;
+            }
+        }
+    }
+}

@@ -1,0 +1,63 @@
+@page "/SendEmail"
+@using BlazorApp.Data.Service
+@using BlazorApp.Data
+@inject IEmailService service;
+<h3>SendEmail</h3>
+<div class="card">
+<h3>Send Email</h3>
+<div class="form-group field">
+<label>Receiver:</label>
+<input type="text" @bind="receiver" @bind:event="oninput"/>
+<label>Title:</label>
+<input type="text" @bind="title" @bind:event="oninput"/>
+<label>Body:</label>
+<input type="text" @bind="body" @bind:event="oninput"/>
+@if (!string.IsNullOrEmpty(resultMsg))
+{
+<label style="color: @color">@resultMsg</label>
+}
+</div>
+<div class="button-row">
+<button @onclick="Create"  class="acceptbtn">Send Email</button>
+</div>
+</div>
+@code {
+    private string sender = "Apurva";
+    private string receiver = "";
+    private string title = "";
+    private string body = "";
+    private DateTime timeSent = DateTime.Now;
+    private string resultMsg = "";
+    private string color = "";
+
+    public async Task Create()
+    {
+        try
+        {
+            Email email = new Email
+            {
+                Sender = sender,
+                Receiver = receiver,
+                Title = title,
+                Body = body,
+                TimeSent = timeSent
+            };
+            await service.SendEmailAsync(email);
+            string emailJson = System.Text.Json.JsonSerializer.Serialize(email);
+            Console.WriteLine($"Email sent: {emailJson}");
+
+            receiver = "";
+            title = "";
+            body = "";
+            resultMsg = "Email sent successfully";
+            color = "green";
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            resultMsg = e.Message;
+            color = "red";
+        }
+    }
+
+}

@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "WebAPI\WebAPI.csproj", "{55AB7F3F-6FE3-4D32-B156-D6F364FC4E96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorApp", "BlazorApp\BlazorApp.csproj", "{114871BB-CD4F-49F8-BC4C-C4C2BEBD792D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EfcDataAccess", "EfcDataAccess\EfcDataAccess.csproj", "{523BE3DB-5EF2-44C5-B830-477B5777F62F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{55AB7F3F-6FE3-4D32-B156-D6F364FC4E96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55AB7F3F-6FE3-4D32-B156-D6F364FC4E96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55AB7F3F-6FE3-4D32-B156-D6F364FC4E96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55AB7F3F-6FE3-4D32-B156-D6F364FC4E96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{114871BB-CD4F-49F8-BC4C-C4C2BEBD792D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{114871BB-CD4F-49F8-BC4C-C4C2BEBD792D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{114871BB-CD4F-49F8-BC4C-C4C2BEBD792D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{114871BB-CD4F-49F8-BC4C-C4C2BEBD792D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{523BE3DB-5EF2-44C5-B830-477B5777F62F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{523BE3DB-5EF2-44C5-B830-477B5777F62F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{523BE3DB-5EF2-44C5-B830-477B5777F62F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{523BE3DB-5EF2-44C5-B830-477B5777F62F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
